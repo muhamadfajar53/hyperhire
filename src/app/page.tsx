@@ -6,7 +6,7 @@ export const dynamic = 'force-dynamic';
 export const fetchCache = 'force-no-store';
 
 async function getCarouselData(): Promise<TCarouselCardData[]> {
-  const res = await fetch(`${process.env.BASE_URL}/api/carousel`, {
+  const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/carousel`, {
     next: {
       revalidate: 3600,
     },
@@ -26,7 +26,7 @@ async function getCarouselData(): Promise<TCarouselCardData[]> {
 }
 
 async function getSliderData(): Promise<TSliderItem[]> {
-  const res = await fetch(`${process.env.BASE_URL}/api/slider`, {
+  const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/slider`, {
     next: {
       revalidate: 3600,
     },
